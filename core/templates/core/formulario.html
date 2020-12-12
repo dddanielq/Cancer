@@ -1,0 +1,60 @@
+{% extends 'core/base.html'%}
+{% load static %}
+{% block imagen %}
+{% endblock %}
+{% block contenido %}
+<main id="main">
+
+  <!-- ======= Breadcrumbs Section ======= -->
+  <section class="breadcrumbs">
+    <div class="container">
+
+      <div class="d-flex justify-content-between align-items-center">
+        <h2>Reconocimento de Patrones</h2>
+        <ol>
+          <li><a href="{% url 'home' %}">Inicio</a></li>
+          <li>Tabla</li>
+        </ol>
+      </div>
+
+    </div>
+  </section><!-- End Breadcrumbs Section -->
+
+  <section id="datos" class="datos">
+    <div class="container" style="text-align:center;" data-aos="zoom-in" data-aos-delay="100">
+      <table class="egt" border=2 width=100%>
+        <tr>
+          <td scope="row" colspan=4 style="background-color:deeppink">
+            <font size=10 color="white" >CALCULA CÁNCER</font>
+          </td>
+        </tr>
+        <tr>
+
+          <th style="background-color:lightpink" color="white">PARTES</th>
+
+          <th style="background-color:lightpink" color="white">TEMPERATURA</th>
+
+          <th style="background-color:lightpink" color="white">COLOR</th>
+
+          <th style="background-color:lightpink" color="white">IFLAMACIÓN</th>
+
+        </tr>
+        {% for c in misTejidos %}
+        <tr>
+
+          <td>{{ c.partes }}</td>
+
+          <td>{{ c.temperatura }}</td>
+
+          <td>{{ c.color }}</td>
+
+          <td>{{ c.inflamacion }}</td>
+
+        </tr>
+        {% endfor %}
+      </table>
+    </div>
+  </section>
+
+</main><!-- End #main -->
+{% endblock %}
